@@ -12,14 +12,6 @@ class Company
     self.class.all << self
   end
 
-  def logo_in_browser
-
-  end
-
-  def website_in_browser
-    
-  end
-
   def self.all
     @@all
   end
