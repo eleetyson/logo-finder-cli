@@ -5,6 +5,7 @@ class CLI
     while input1 != "exit"
       puts "To search, enter 'search'"
       puts "To quit, enter 'exit'"
+      print "Please type your selection: "
       input1 = gets.strip
 
       if input1 == "search"
@@ -16,7 +17,7 @@ class CLI
 
     end
     puts "**********************************"
-    puts "Have a good one!"
+    puts "Bye!"
   end
 
   def find_info(company)
@@ -31,7 +32,6 @@ class CLI
     puts "Logo: #{Company.all.first.logo}"
     Company.wipe
     puts  "**********************************"
-    # puts "To open the logo URL in a tab, type 'logo'"
   end
 
 end
