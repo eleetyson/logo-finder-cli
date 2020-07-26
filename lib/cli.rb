@@ -1,9 +1,37 @@
 class CLI
 
   def run
-    puts "**********************"
-    puts "Welcome to Logo Finder"
-    puts "**********************"
+    input1 = nil
+    while input1 != "exit"
+      puts "To search, enter 'search'"
+      puts "To quit, enter 'exit'"
+      input1 = gets.strip
+
+      if input1 == "search"
+        puts "**********************************"
+        puts "Please enter a company name below:"
+        input2 = gets.strip
+        self.find_info(input2)
+      end
+
+    end
+    puts "**********************************"
+    puts "Have a good one!"
+  end
+
+  def find_info(company)
+    API.get_company_info(company)
+    self.display_info
+  end
+
+  def display_info
+    puts "~OUTPUT~"
+    puts "Company: #{Company.all.first.name}"
+    puts "Website: #{Company.all.first.domain}"
+    puts "Logo: #{Company.all.first.logo}"
+    Company.wipe
+    puts  "**********************************"
+    # puts "To open the logo URL in a tab, type 'logo'"
   end
 
 end
