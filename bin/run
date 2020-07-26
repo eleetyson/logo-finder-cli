@@ -2,5 +2,5 @@
 
 require_relative '../config/environment'
 
-finder = Finder.new
-finder.run
+cli = CLI.new
+cli.run
